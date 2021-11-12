@@ -140,7 +140,7 @@ const LoginPage = () => {
   const location = useLocation();
   const auth = useAuth();
 
-  const { from } = location.state || { from: { pathname: '/' } };
+  const { from } = location.state || { from: { pathname: '/home' } };
 
   const login = () => {
     auth.signIn(() => {
@@ -161,7 +161,7 @@ const AuthButton = () => {
   const location = useLocation();
   const auth = useAuth();
 
-  const { from } = location.state || { from: { pathname: '/' } };
+  const { from } = location.state || { from: { pathname: '/home' } };
 
   const login = () => {
     auth.signIn(() => {

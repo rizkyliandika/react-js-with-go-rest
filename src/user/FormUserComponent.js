@@ -12,15 +12,14 @@ const FormUserComponent = () => {
     }
     const [payload, setPayload] = React.useState(initialPayload)
 
-    const addUser = () => {
-        userService.createUser(payload).then(res => {
-            console.log('res: ', res);
-            if (res.data.id === '' || res.data == null) {
-                alert('create user is success');
+    const addUser = async () => {
+        return userService.createUser(payload).then((data) => {
+            if (data.id !== '' && data !== null) {
+                alert('create successful');
             } else {
-                alert('gagal');
+                alert('failed to create');
             }
-        })
+        });
     }
 
     const handleChangeTextInput = (name, input) => {
